@@ -1,0 +1,77 @@
+# 20x20 Nonogram test
+# Completed:
+#          11111111112
+# 12345678901234567890
+# __________OOOO______  1
+# ________OOOOOOOO____  2
+# _______OOOOOOOOOO___  3
+# ______OOOOOOOOOOOO__  4
+# ______OOO_OOO_OOOO__  5
+# O____OOOOOOOOOOOOOO_  6
+# O____OOOOOOOOOOOOOO_  7
+# O____OOOOOOOOOOOOOO_  8
+# _O___OOOOOOOOOOOOOO_  9
+# _O____OOO_OOO_OOOO__ 10
+# _O____OOOO___OOO_O__ 11
+# __O_____OOOOOOOO____ 12
+# __O_______OOOO______ 13
+# __O________OO_______ 14
+# __O________OO_______ 15
+# ___O____OOOOOOOO____ 16
+# ___O__OOOOOOOOOOOO__ 17
+# ___O_OOOOOOOOOOOOOO_ 18
+# ___OOOOOOOOOOOOOOOOO 19
+# __OOOOOOOOOOOOOOOOOO 20
+
+20
+
+# rows
+4
+8
+10
+12
+3 3 4
+
+1 14
+1 14
+1 14
+1 14
+1 3 3 4
+
+1 4 3 1
+1 8
+1 4
+1 2
+1 2
+
+1 8
+1 12
+1 14
+17
+18
+
+# cols
+
+3
+3
+4 1
+5
+2
+
+4 3
+8 4
+9 4
+11 5
+3 4 2 5
+
+10 2 5
+10 9
+10 9
+4 4 3 5
+11 5
+
+11 5
+8 4
+8 4
+4 3
+2
