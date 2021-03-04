@@ -8,6 +8,10 @@ object NonogramSolver {
   val logger = LogManager.getLogger
 
   def main(args: Array[String]): Unit = {
+    if (args.length != 1) {
+      println("Usage: NonogramSolver /path/to/puzzle_file")
+      return
+    }
     val (hsize, vsize, cols, rows) = {
       val lines = Source.fromFile(args(0)).getLines().filter(l => !l.startsWith("#") && l.length != 0).toList
       val hsize = lines(0).toInt
@@ -20,8 +24,8 @@ object NonogramSolver {
       logger.debug(s"rows=$rows")
       (hsize, vsize, cols, rows)
     }
-//    val ui = new NonogramUI(args(0), hsize, vsize, rows, cols)
-//    ui.setVisible(true)
+    val ui = new NonogramUI(args(0), hsize, vsize, rows, cols)
+    ui.setVisible(true)
 
     val filterGrid = Grid(for (col <- cols) yield col.generateFilter(vsize)).inverse
 
@@ -70,7 +74,7 @@ object NonogramSolver {
           rowsToTry.foreach { r =>
             // Builds a new grid with r substituted for row #whichRow
             val newGrid = startGrid.updated(whichRow, r)
-//            ui.updateGame(newGrid)
+            ui.updateGame(newGrid, "Working...")
             val newColumnDiff = newGrid.columnDiff(cols)
             if (cd - newColumnDiff == r.countOs) { // Only try rows where every O counts
               val tGrid = newGrid.inverse
@@ -99,7 +103,7 @@ object NonogramSolver {
          println(s"Rows: $rows")
          println(s"Cols: $cols")
         println(solution)
-//        ui.updateGame(solution)
+        ui.updateGame(solution, "Done! ")
       case None =>
         println("\n\nRows: " + rows)
         println("Cols: " + cols)
